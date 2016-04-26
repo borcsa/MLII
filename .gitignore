@@ -1,0 +1,13 @@
+*synctex.gz
+/tmp
+.texlipse
+.project
+.settings
+*.log
+*.aux
+*.tex.backup
+*.*~
+#ignore python tmp files
+*.pyc
+#ignore ipython checkpoints
+**/.ipynb_checkpoints/
