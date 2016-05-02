@@ -1,0 +1,43 @@
+\section*{Exercise 1}
+
+We want to show scaling, translation and rotation invariancies for the error term, which is given as
+
+\begin{equation}
+	E(w)  = \sum_i | X_i - \sum_j w_{ij} X_j|.
+\end{equation}
+
+\subsection*{Ex 1.a - sclaing invariance}
+
+We scale each of the $X_i$ by a fixed scalar $alpha \in \mathbb{R}^+\setminus\{0\}$.
+Then we get:
+\begin{align*}
+	\sum_i | \alpha X_i - \sum_j w_{ij} \alpha X_j| = \sum_i | \alpha (X_i - \sum_j w_{ij}  X_j)|  = |\alpha| \sum_i | X_i - \sum_j w_{ij} X_j|
+\end{align*}
+
+So the scaled error term is the same as the original error multiplied by a constant, positive number $\alpha$. Thus it has the same minimum as the original term.
+
+\subsection*{Ex 1.b - translation invariance}
+
+Now we translate each of the $X_i$ by the same vector $v$.
+Here we will use that $\sum_j w_{ij} = 1$. Then we can show:
+
+\begin{align*}
+	\sum_i | X_i +v- \sum_j w_{ij} (X_j+v)|. = \sum_i | X_i +v- \sum_j w_{ij}X_j -\sum_j w_{ij} v)|. = \sum_i | X_i +v- \sum_j w_{ij}X_j -v\sum_j w_{ij})|. = \sum_i | X_i - \sum_j w_{ij} X_j|
+\end{align*}
+
+So the translated terms cancel each other out and the error is exactly the same as the old error and thus has the same minimum.
+
+\subsection*{Ex 1.c - rotation invariance}
+Let $U \in \mathbb{R}^{n \times n}$ be an orthogonal matrix. Keep in mind that orthogonal matrizes preserve distances, i.e. $|Ux| = |x|$ for any $x \in \mathbb{R}^n$.
+
+We will also use that matrix-multiplikation is a linear operation.
+Then we get for our error-term the following.
+
+\begin{align*}
+	 \sum_i | UX_i - \sum_j w_{ij} UX_j|. = 	 \sum_i | U(X_i - \sum_j w_{ij} X_j)|. = \sum_i | X_i - \sum_j w_{ij} X_j|.
+\end{align*}}
+
+This is again the original error and thus the minimum is preserved.
+
+Havin proven all of the above, we have also proven invariance w.r.t. arbitraty rotations. If we wan to rotate around an arbitraty fixed point that is not the origin, simply translate the whole thing so that the rotation centre is the origin, do the rotation and then translate back. As all of these operations are invariant, their sequential use is also invariant.
+
