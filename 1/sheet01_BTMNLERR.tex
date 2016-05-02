@@ -1,0 +1,155 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Programming/Coding Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage[utf8x, latin1]{inputenc} %unix-windows-compatible
+\usepackage{fontenc}[utf8]
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+%\usepackage[usenames,dvipsnames]{color} % Required for custom colors
+\usepackage{graphicx} % Required to insert images
+\usepackage{listings} % Required for insertion of code
+\usepackage[section]{placeins}
+\usepackage{caption} % to set figure captions in minipage
+\usepackage{amsmath}
+\usepackage{amssymb}
+% (captionof{figure}{..}) Margins
+%\topmargin=-0.45in
+%\evensidemargin=0in
+%\oddsidemargin=0in
+%\textwidth=6.5in
+%\textheight=9.0in
+%\headsep=0.25in
+
+%\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+%\lhead{\hmwkAuthorName} % Top left header
+%\chead{\hmwkClass\ (\hmwkClassInstructor\ \hmwkClassTime): \hmwkTitle} % Top center head
+%\rhead{\firstxmark} % Top right header
+%\lfoot{\lastxmark} % Bottom left footer
+%\cfoot{} % Bottom center footer
+%\rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}} % Bottom right footer
+%\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+%\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+%\setlength\parindent{0pt} % Removes all indentation from paragraphs
+\renewcommand\thesubsection{\thesection.\alph{subsection}}
+\newcommand*\tageq{\refstepcounter{equation}\tag{\theequation}}
+
+%----------------------------------------------------------------------------------------
+%	CODE INCLUSION CONFIGURATION
+%----------------------------------------------------------------------------------------
+% Default fixed font does not support bold face
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{12} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{12}  % for normal
+
+\usepackage{color}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\lstset{language=Python, 
+breaklines=true, 
+tabsize=4,
+basicstyle=\ttm,
+otherkeywords={self},            
+keywordstyle=\ttb\color{deepblue},
+emph={MyClass,__init__},         
+emphstyle=\ttb\color{deepred},   
+stringstyle=\color{deepgreen},
+frame=tb,                        
+showstringspaces=false            
+}% 
+%\setcounter{secnumdepth}{0} % Removes default section numbers
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\Title}{Exercise Sheet 1} % Assignment title
+\newcommand{\DueDate}{Due Date: \\ Tuesday,\ Mai\ 03,\ 2016} % Due date
+\newcommand{\Class}{Machine Learning II} % Course/class
+% Your name
+%\newcommand{\ID}{327468} % Your name
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+    \centering
+    \begin{figure*}[!hb]
+      \begin{minipage}{1\textwidth}
+    	\hspace*{-.06\linewidth}
+      	\begin{minipage}{.13\linewidth}
+        	\includegraphics[width=1.0\linewidth]{../tex_main/src/tu_logo_3d_rot}
+      	\end{minipage}
+        \quad\quad
+      	\begin{minipage}{.62\linewidth} 
+    		Department IV Computer Science and Electrical Engineering \\
+    		Technische Universit\"at Berlin
+      	\end{minipage}
+    %	
+    %
+      %\begin{minipage}{.21\linewidth}
+      %  \includegraphics[width=1.0\linewidth]{../../include/peslogo.pdf}    
+      %\end{minipage}  
+      \end{minipage} 
+   \end{figure*}
+   \vspace{5cm}
+   {\huge\textbf{\Class}}\\ 
+        \vspace{1cm}
+        {\huge{\Title}\\}
+        \vspace{0.6cm} 
+    {\mdseries\large \DueDate }
+    \vspace{1cm}
+}
+
+%\author{\textbf{\Author}}
+
+\author{ Group: BTMNLERR \\
+		Mario Johannes Neumann 327468 \\
+        Leon Eifler 331653 \\
+        \vspace{1cm} } 
+
+\date{\today} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+\newpage
+%\tableofcontents
+%\newpage
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+
+
+\end{document}
