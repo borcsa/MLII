@@ -22,7 +22,10 @@ Now we translate each of the $X_i$ by the same vector $v$.
 Here we will use that $\sum_j w_{ij} = 1$. Then we can show:
 
 \begin{align*}
-	\sum_i | X_i +v- \sum_j w_{ij} (X_j+v)|. = \sum_i | X_i +v- \sum_j w_{ij}X_j -\sum_j w_{ij} v)|. = \sum_i | X_i +v- \sum_j w_{ij}X_j -v\sum_j w_{ij})|. = \sum_i | X_i - \sum_j w_{ij} X_j|
+	\sum_i | X_i +v- \sum_j w_{ij} (X_j+v)|. \\
+	= \sum_i | X_i +v- \sum_j w_{ij}X_j -\sum_j w_{ij} v)|. \\
+	= \sum_i | X_i +v- \sum_j w_{ij}X_j -v\sum_j w_{ij})|. \\
+	= \sum_i | X_i - \sum_j w_{ij} X_j|
 \end{align*}
 
 So the translated terms cancel each other out and the error is exactly the same as the old error and thus has the same minimum.
@@ -35,7 +38,7 @@ Then we get for our error-term the following.
 
 \begin{align*}
 	 \sum_i | UX_i - \sum_j w_{ij} UX_j|. = 	 \sum_i | U(X_i - \sum_j w_{ij} X_j)|. = \sum_i | X_i - \sum_j w_{ij} X_j|.
-\end{align*}}
+\end{align*}
 
 This is again the original error and thus the minimum is preserved.
 
