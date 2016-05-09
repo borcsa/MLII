@@ -1,0 +1,13 @@
+\section*{Exercise 2}
+
+\textit{
+Explain how the learned embedding would relate qualitatively to the input data. Discuss a practical scenario where such choice of probability distributions would be useful.}
+
+In this scenario points that are far apart in the high-dimensional space get a much larger value than the same distances in the low dimensional space due to the heavier tails of the $p_{ij}$ values.
+
+Thus, if we used this reversed t-SNE, points that are relatively far apart in the high-dimensional space could be placed much closer together in the low dimensional space. 
+
+This could be useful if we have a loosely structured clusters in the high-dimensional space.
+If many of the data-points are far apart, but not qualitatively as far as those from different clusters, then they could be more densely packed in the embedded space due to the shorter tail of the gaussians. 
+
+If we used the normal t-SNE, the structure of these far-apart but loosely clusteded data-points would be lost, as the heavy tail in the embedded space would place them all far apart. This could be worsened by the fact that there is less space to occcupy for these many outliers, so the global structure of the data in the higher dimensional space might be lost. 
