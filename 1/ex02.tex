@@ -1,0 +1,44 @@
+\section*{Exercise 2}
+(i) The matrix $C$ is defined as follows. 
+\begin{align}
+            C &= (\mathbf{1}x^T - \eta) \cdot (\mathbf{1}x^T - \eta)^T \\
+            &= \left[  {\begin{array}{c} (x - \eta_1)^T \\   \vdots \\   (x - \eta_k)^T \\     \end{array} } \right]  \cdot \left[  \begin{array}{c c c} x-\eta_1 & \dots & x-\eta_k  \end{array} \right]
+\end{align}
+
+So the i-th entry in the j-th row of $C$ is 
+
+$$C_{ij} = (x^T - \eta_i^T)(x - \eta_j) = (x - \eta_i)^T (x-\eta_j) = <x - \eta_i, x-\eta_j>\; . $$
+
+Assume that the entries of $w$ add up to 1. Then, for the error $\varepsilon$, we compute
+
+\begin{align}
+\varepsilon = \Big|x - \sum_{j=1}^k w_j \eta_j \Big|^2 
+                            = \Big| \big(\underbrace{\sum_{j=1}^k  w_j}_{= 1}\big)x - \sum_{j=1}^k  w_j \eta_j \Big|^2   
+                            &= \Big| \sum_{j=1}^k  w_j (x - \eta_j) \Big|^2   \\ 
+                            &= <\sum_{i=1}^k  w_i (x - \eta_i), \sum_{j=1}^k  w_j (x - \eta_j) > \\
+                            &= \sum_{i,j = 1}^k w_i w_j<x - \eta_i, x - \eta_j> \quad \text{ by bilinearity} \\
+                            &= \sum_{i,j = 1}^k w_i w_j C_{ij} \\
+                            &= w^T C w \; .
+                            \end{align} 
+Hence, minimizing $\varepsilon$ is equivalent to minimizing $\; w^T C w \;$ under the condition that the entries of $w$ add up to 1.
+                  
+(iii) Consider the Lagrange function
+
+$$ \mathcal{L}(w, \lambda) := w^T C w - \lambda \left(\sum_{j=1}^k w_j -1\right) $$
+
+where $\lambda$ is the Langrange multiplier. If $\; w^TCw \;$ has a minimum over the set of weight vectors $w$ satisfying $$\sum_{j=1}^k w_j = 1$$ then there exists a $\lambda$ such that the partial derivatives of $\mathcal{L}$:
+
+\begin{align}
+   &(1) \quad \frac{\partial}{\partial w} \mathcal{L}(w, \lambda) = 2Cw - \mathbb{1}\lambda \\ 
+   &(2) \quad \frac{\partial}{\partial \lambda} \mathcal{L}(w, \lambda) = - \sum_{j=1}^k w_j + 1 
+\end{align}
+
+are zero. Now assume that $\overline{w}$ solves the equation $$ C\overline{w} = \mathbb{1} \; . $$ and that the sum of the entries of $\overline{w}$ is nonzero. Then the weight vector $$w := \frac{\overline{w}}{\sum_{j=1}^k w_j}$$ solves (1), for $$\lambda = \frac{2}{ \sum_{j=1}^k w_j} \; .$$
+
+(ii) Let $\overline{w}$ be as written above. In case $C$ is regular, $\overline{w}$ is just $C^{-1}\mathbb{1}$ and it satisfies
+
+$$ \sum_{j=1}^k \overline{w}_j = \mathbb{1}^T \overline{w} = \mathbb{1}^T C^{-1} \mathbb{1} \; .$$
+
+By part (iii), the optimal weight vector is then given by
+
+$$ w = \frac{\overline{w}}{\sum_{j=1}^k w_j} =\frac{C^{-1} \mathbb{1}}{\mathbb{1}^T C^{-1} \mathbb{1}} \; .$$ 
