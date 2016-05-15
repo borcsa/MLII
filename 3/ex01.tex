@@ -1,0 +1,83 @@
+\section*{Exercise 1: Dual CCA}
+
+In this exercise, we would like to derive the dual optimization problem.
+
+\subsection*{Part (a):}
+
+We will show, that there is always an optimal solution in the span of the data.
+For this we observe the fact, that any vector can be decomposed into two othorgonal vectors. Let $w_x, w_y$ be optimal solutions of the problem.
+Then we can decompose those into the part that lies in the span of the data and the part that lies in the orthogonal complement of the data, i.e.
+
+\begin{align*}
+	w_x = X\alpha_x + r_x && w_y = Y\alpha_y + r_y,
+\end{align*}
+
+where $X^Tr_x = Y^Tr_y = 0$. We denote $\hat w_x = X\alpha_x, \hat w_y = Y\alpha_y$. Then we get
+\begin{align*}
+	w_x^T C_{xy} w_y = w_x^T X Y^T w_y = (X^T(X\alpha_x + r_x))^T(Y^T(Y\alpha_y + r_y))\\ = (X^TX\alpha_x)^T(Y^TY\alpha_y) = \hat w_x C_{xy} \hat w_y.
+\end{align*}
+
+So the objective does not change if we use $\hat w_x$ instead of the original solution.
+In exactly the same manner we get
+\begin{align*}
+	w_x^T XX^T w_x = \hat w_x^T XX^T \hat w_x = 1 \\
+	w_y^T YY^T w_y = \hat w_y^T YY^T \hat w_y = 1.
+\end{align*}
+
+So we have shown, that for each optimal solution, there exists a solution in the span of the data that has the same objective value and fullfills all the constraints. So there always exists and optimal solution in the span of the data. 
+
+\subsection*{Part (b):}
+
+We have shown in part (a) that there is always an optimal solution in the span of the data. Thus the optimization problem remains the same if we substitute $w_x = X\alpha_x, w_y = Y \alpha_y$. 
+
+We get the Problem:
+\begin{align*}
+	\max \alpha_x^T X^T X Y^T T \alpha_y = \max \alpha_x^T AB \alpha_y& \\
+	s.th.: \alpha_x^T X^TXX^TX \alpha_x =  \alpha_x^T A^2 \alpha_x &= 1 \\
+	\alpha_y^T B^2 \alpha_y &= 1
+\end{align*}
+
+We consider the Lagrangian
+\begin{equation*}
+	L(\alpha_x, \alpha_y, \lambda) =  \alpha_x^T AB \alpha_y - \lambda_1/2 (\alpha_x^T A^2 \alpha_x - 1) - \lambda_2/2(	\alpha_y^T B^2 \alpha_y -1).
+\end{equation*}
+We compute the gradient (in the same way as in the lecture) and get
+\begin{align*}
+	\pd{}{\alpha_x} 	L(\alpha_x, \alpha_y, \lambda) = AB\alpha_y - \lambda_1A^2 \alpha_x \\
+	\pd{}{\alpha_y} 	L(\alpha_x, \alpha_y, \lambda) = BA\alpha_y - \lambda_2B^2 \alpha_y 
+\end{align*}
+If we set both equations to zero we get
+\begin{align*}
+	AB\alpha_y = \lambda_1A^2 \alpha_x \\
+	BA\alpha_y = \lambda_2B^2 \alpha_y.
+\end{align*}
+We use the same trick as in the lecture to show that $\lambda_1 = \lambda_2$. Fot this, multiply the first equation by $\alpha_x^T$ from the left and the second by $\alpha_y^T$ from the left.
+This leads to
+\begin{align*}
+	\lambda_1 =	\alpha_x^T \lambda_1A^2 \alpha_x = \alpha_x^T AB \alpha_y = \lambda_2	\alpha_y^T B^2 \alpha_y = \lambda_2
+\end{align*}
+
+Thus we have shown, that with $\rho = \lambda_1 = \lambda_2$ we need to solve the generalized EV- problem
+\begin{align*}
+	\begin{pmatrix}
+	0 & AB \\
+	BA & 0
+	\end{pmatrix} \begin{pmatrix}
+	\alpha_x \\ \alpha_y
+	\end{pmatrix}
+	= \rho 
+	\begin{pmatrix}
+	A^2 & 0 \\
+	0 & B^2 
+	\end{pmatrix}
+	\begin{pmatrix}
+	\alpha_x \\ \alpha_y
+	\end{pmatrix}
+\end{align*}
+
+\subsection*{Part (c)}
+
+If we have solved the generalized eigenvalue problem defined above, then we can just retransform to the solution of the original problem by
+\begin{align*}
+	w_x = X \alpha_x && w_y = Y\alpha_y
+\end{align*}

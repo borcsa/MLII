@@ -1,0 +1,26 @@
+\section*{Exercise 2: Kernalized CCA}
+
+\subsection*{Part (a)}
+
+If we denote by $\Phi_1$ the map that maps the $X$-data into feature space and by $\Phi_2$ the map that maps the $Y$-data into (a possibly different) feature space. 
+As in exercise 1 any solution can be found as a span of the data, so we set 
+$w_x = \sum_{i=1}^{N}\alpha_i \Phi_1(x_i)$ and $w_y = \sum_{i=1}^{N}\beta_i \Phi_2(y_i)$.
+
+The kernels are the inner products of data points in the feature space.
+If we put this into the Problem and proceed as exercise 1 in the dual CCA we get nearly the same generalized eigenvalue problem, only with the Kernel matrizes instead of the normal ones, i.e. 
+\begin{align*}
+\begin{pmatrix}
+0 & K_XK_Y \\
+K_YK_X & 0
+\end{pmatrix} \begin{pmatrix}
+\alpha_x \\ \alpha_y
+\end{pmatrix}
+= \rho 
+\begin{pmatrix}
+K_X^2 & 0 \\
+0 & K_Y^2 
+\end{pmatrix}
+\begin{pmatrix}
+\alpha_x \\ \alpha_y
+\end{pmatrix}
+\end{align*}
